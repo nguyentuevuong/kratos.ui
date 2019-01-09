@@ -1,0 +1,10 @@
+{
+    "vi": {
+        "hello": "Xin chào!",
+        "product_list": "Danh mục sp"
+    },  
+    "en": {
+        "hello": "Hello world!",
+        "product_list": "Products"
+    }
+}
