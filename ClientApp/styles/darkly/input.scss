@@ -1,0 +1,56 @@
+.input-group {
+    &-transparent {
+        background-color: #fff;
+        .input-group-prepend,
+        .input-group-append {
+            position: absolute;
+            border-color: transparent;
+            background-color: transparent;
+            .input-group-text {
+                border-color: transparent;
+                background-color: transparent;
+            }
+            +.form-control {
+                background-color: transparent;
+                &:disabled {
+                    background-color: rgba(240, 240, 240, 0.75);
+                }
+            }
+        }
+        .input-group-prepend {
+            left: 0;
+            +.form-control {
+                padding-left: 32px;
+            }
+        }
+        .input-group-append {
+            right: 0;
+            +.form-control {
+                padding-right: 32px;
+            }
+        }
+    }
+    .form-check {
+        label,
+        .form-check {
+            &-label {
+                width: 0px;
+                line-height: 1.5;
+            }
+            &-input {
+                width: 18px;
+                margin-top: -3px;
+            }
+        }
+    }
+    .btn {
+        &.btn-secondary {
+            border-color: $input-border-color;
+            &.focus,
+            &:focus {
+                box-shadow: $input-focus-box-shadow;
+                border-color: $input-focus-border-color;
+            }
+        }
+    }
+}

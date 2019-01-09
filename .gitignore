@@ -1,0 +1,11 @@
+**/node_modules/*
+**/.vscode/*
+**/package-lock.json
+**/vendor*
+**/bundles*
+**/main-server*
+**/wwwroot/dist/**/*.html
+**/wwwroot/dist/**/*.eot
+**/wwwroot/dist/**/*.svg
+**/wwwroot/dist/**/*.ttf
+**/.DS_Store

@@ -1,0 +1,35 @@
+
+.markdown {
+    &-html-preview {
+        .blockquote {
+            font-size: 1em;
+            color: #6a737d;
+            margin-top: 1rem;
+            margin-left: 1em;
+            padding: 0.6em 0 0.6em 1em;
+            border-left: 0.25em solid #dfe2e5;
+        }
+        h1,
+        h2,
+        h3,
+        h4 {
+            border-bottom: 1px solid #dfe2e5;
+            padding-bottom: 0.2em;
+        }
+        h1,
+        h2 {
+            padding-top: 0.5em;
+            border-bottom: 2px dashed $primary;
+        }
+        h3,
+        h4 {
+            padding-top: 1em;
+        }
+        .fa {
+            &.fa-circle-o,
+            &.fa-check-circle-o {
+                font-size: 1.2em;
+            }
+        }
+    }
+}

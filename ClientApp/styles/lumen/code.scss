@@ -1,0 +1,145 @@
+pre.pretty-print {
+    border-radius: 5px;
+    background-color: #d7d7d770;
+    border: 1px solid #ccc;
+    padding: 15px;
+    >code {
+        display: block;
+        position: relative;
+        &:after {
+            display: block;
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            padding: 3px 5px;
+            background-color: darken(#ccc, 5%);
+            border-bottom-left-radius: 5px;
+            color: #fff;
+            font-size: 1rem;
+        }
+    }
+    .css {
+        &:after {
+            content: 'css';
+        }
+        .selector-class {
+            color: #00B050;
+        }
+        .attribute {
+            color: brown;
+        }
+        .number {
+            color: #0D86D1;
+        }
+    }
+    .scss {
+        &:after {
+            content: 'scss';
+        }
+        .selector-class {
+            color: #00B050;
+        }
+        .attribute {
+            color: brown;
+        }
+        .number {
+            color: #0D86D1;
+        }
+    }
+    .xml {
+        &:after {
+            content: 'html';
+        }
+        .tag {
+            color: #00B050;
+            .name {
+                color: brown;
+            }
+            .attr {
+                color: #0D86D1;
+            }
+            .string {
+                color: #4d4d4d;
+            }
+        }
+    }
+    .json {
+        &:after {
+            content: 'JSON';
+        }
+        .attr {
+            color: #0D86D1;
+        }
+        .number {
+            color: chocolate;
+        }
+        .string {
+            color: #4d4d4d;
+        }
+    }
+    .typescript {
+        &:after {
+            content: 'TypeScript';
+        }
+        color: #0D86D1;
+        .title {
+            color: #f00;
+        }
+        .keyword {
+            color: #00B050;
+        }
+        .built_in {
+            color: #4d4d4d;
+        }
+        .number {
+            color: #4d4d4d;
+        }
+        .string {
+            color: #f00;
+        }
+        .function {
+            color: brown;
+            .keyword {
+                color: brown;
+            }
+            .title {
+                color: dodgerblue;
+            }
+            .params {
+                color: #4d4d4d;
+            }
+        }
+    }
+    .javascript {
+        &:after {
+            content: 'JavaScript';
+        }
+        .title {
+            color: #f00;
+        }
+        .keyword {
+            color: #00B050;
+        }
+        .built_in {
+            color: #4d4d4d;
+        }
+        .number {
+            color: #4d4d4d;
+        }
+        .string {
+            color: #f00;
+        }
+        .function {
+            color: brown;
+            .keyword {
+                color: brown;
+            }
+            .title {
+                color: dodgerblue;
+            }
+            .params {
+                color: #4d4d4d;
+            }
+        }
+    }
+}

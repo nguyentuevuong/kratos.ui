@@ -1,0 +1,121 @@
+	pre {
+	    padding: 1em;
+	    line-height: 1.5;
+	    color: #ce9178;
+	    background-color: #252526;
+	}
+
+	code {
+	    font-size: 1.2em;
+	}
+
+	h1 span {
+	    font-size: 0.5em;
+	}
+
+	a {
+	    color: gray;
+	}
+
+	/* end of page css - below is for the code highlighter */
+
+	.ruby .comment {
+	    color: green;
+	}
+
+	.ruby .string {
+	    color: teal;
+	}
+
+	.ruby .keywords {
+	    color: #569cd6;
+	}
+
+	.ruby .brackets {
+	    color: #569cd6;
+	}
+
+	.javascript {
+	    color: #4ec9b0;
+	    .const {
+	        color: #9cdcfe;
+	    }
+	    .prototype {
+	        color: #dcdcaa;
+		}
+		.event,
+	    .keywords {
+	        color: #569cd6;
+	    }
+	    .groups {
+	        color: #d4d4d4;
+	        &-value {
+	            color: #d7ba7d;
+	        }
+	    }
+	    .blocks,
+	    .brackets {
+	        color: #d4d4d4
+	    }
+	    .comment {
+	        color: #6a9955;
+		}
+		.string {
+			color: #ce9178;
+		}
+	}
+
+	.css {
+	    .comment {
+	        color: #6a9955;
+	    }
+	    .properties {
+	        color: #9cdcfe;
+	    }
+	    .selectors {
+	        color: #d7ba7d;
+	    }
+	    .brackets {
+	        color: #d4d4d4;
+	    }
+	    .units {
+	        color: #b5cea8;
+	    }
+	    .url {
+	        &-name {
+	            color: #dcdcaa;
+	        }
+	        &-value {
+	            color: #ce9178;
+	        }
+	        &-brackets {
+	            color: #808080;
+	        }
+	    }
+	    .comma {
+	        color: #d4d4d4;
+	    }
+	}
+
+	.html {
+	    color: #d4d4d4;
+	    .tag {
+	        color: #569cd6;
+	    }
+	    .comment {
+	        color: #6a9955;
+	        font-style: italic;
+	    }
+	    .doctype {
+	        color: #569cd6;
+	    }
+	    .attribute {
+	        color: #9cdcfe;
+	    }
+	    .attribute-value {
+	        color: #ce9178;
+	    }
+	    .brackets {
+	        color: #808080;
+	    }
+	}

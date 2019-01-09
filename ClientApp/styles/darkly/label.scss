@@ -1,0 +1,101 @@
+.control-label {
+    overflow: hidden;
+    padding-left: 5px;
+    max-height: 35px;
+    line-height: 35px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-left: 3px solid darken($primary, 5%);
+    &-info {
+        border-left-color: darken($info, 5%);
+    }
+    &-success {
+        border-left-color: darken($success, 5%);
+    }
+    &-warning {
+        border-left-color: darken($warning, 5%);
+    }
+    &-default,
+    &-primary {
+        border-left-color: darken($primary, 5%);
+    }
+    &-secondary {
+        border-left-color: darken($secondary, 5%);
+    }
+    &-danger,
+    &-required {
+        border-left-color: darken($danger, 5%);
+    }
+    &-light {
+        border-left-color: darken($light, 5%);
+    }
+    &-dark {
+        border-left-color: darken($dark, 5%);
+    }
+    &-flex {
+        display: inline-flex;
+    }
+    &-block {
+        display: block;
+    }
+    span {
+        display: block;
+        &:first-child {
+            line-height: 19px;
+            &:last-child {
+                line-height: 35px;
+            }
+        }
+        &:last-child {
+            &:not(:first-child) {
+                font-size: .8em;
+                line-height: 15px;
+            }
+        }
+        &.label-inline {
+            line-height: 35px;
+            display: inline-block;
+            &:last-child {
+                padding-left: 5px;
+            }
+        }
+    }
+    &-inline {
+        span {
+            line-height: 35px;
+            display: inline-block;
+            &:last-child {
+                padding-left: 5px;
+            }
+        }
+    }
+}
+
+.form-group {
+    label,
+    .control-label {
+        margin-bottom: 0;
+    }
+    &-sm {
+        .control-label {
+            font-size: 14px;
+            line-height: 30px;
+            span {
+                &:first-child {
+                    line-height: 17px;
+                }
+                &:last-child {
+                    line-height: 13px;
+                }
+            }
+        }
+    }
+}
+
+.form-horizontal {
+    .form-group-sm {
+        .control-label {
+            padding-top: 0;
+        }
+    }
+}

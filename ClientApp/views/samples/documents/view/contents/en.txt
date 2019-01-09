@@ -1,0 +1,27 @@
+#### Route
+
+> `Route` là một thuộc tính của component, bất kỳ component nào có `url` thì sẽ được đăng ký route và được cọi là một `view`.
+> Khi `route` được đăng ký thành công, giá trị giữa các `component`/`view` sẽ có thêm một phương thức truyền thông qua `url`.
+
+===
+#### Ví dụ:
+`/employee/:id:` là url đã đăng ký thì khi call `/employee/01` -> `params` của component sẽ có thêm thuộc tính `id`.
+Chi tiết cấu trúc `params` của `component` [xem tại đây](/sample/documents/view).
+===
+#### Cách đăng ký `url`
+
+```typescript
+import { component } from '@app/common/ko';
+
+@component({
+    url: 'sample/viewmodel/:id:', // optional
+    // hoặc
+    // url: 'sample/viewmodel/{id}', // require
+})
+export class ViewModel {
+    constructor(params: { id: string }) {
+        // get id from params
+        console.log(params.id);
+    }
+}
+```

@@ -1,0 +1,31 @@
+
+.btn {
+    font-weight: unset;
+    text-transform: unset;
+    //border-width: 1px 1px 4px 1px;
+    &-secondary {
+        border-color: darken($secondary, 20%);
+        &.focus,
+        &:focus {
+            box-shadow: $input-focus-box-shadow;
+            border-color: $input-focus-border-color;
+        }
+    }
+    &-outline-secondary {
+        color: lighten($black, 5%);
+        border-color: darken($secondary, 20%);
+    }
+    &-danger {
+        border-color: darken($danger, 25%);
+    }
+    &-warning {
+        border-color: darken($warning, 10%);
+    }
+    &-group {
+        &-vertical {
+            .btn:not(:first-child) {
+                border-top-width: 0px;
+            }
+        }
+    }
+}

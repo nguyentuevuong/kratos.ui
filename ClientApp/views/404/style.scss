@@ -1,0 +1,101 @@
+.list-group-item {
+    color: #fff;
+    background-color: #23b7e5;
+    &:hover {
+        cursor: pointer;
+        background-color: #16aad8 !important;
+    }
+    .text-muted {
+        float: right;
+        &:before {
+            color: #fff;
+        }
+    }
+}
+
+.page-404,
+.page-500 {
+    margin-top: 120px;
+    text-align: center;
+    .number {
+        font-size: 125px;
+        position: relative;
+        display: inline-block;
+        color: #158CBA;
+    }
+    .details {
+        text-align: left;
+        margin-left: 40px;
+        display: inline-block
+    }
+    &:not(.page-404) {
+        .number {
+            display: inline-block;
+            color: #ec8c8c;
+            text-align: right
+        }
+    }
+    &-3 {
+        background: #000 !important;
+        .page-inner img {
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            position: absolute
+        }
+        .error-404 {
+            color: #fff;
+            text-align: left;
+            padding: 70px 20px 0
+        }
+        h1 {
+            color: #fff;
+            font-size: 130px;
+            line-height: 160px
+        }
+        h2 {
+            color: #fff;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+        p {
+            color: #fff;
+            font-size: 16px
+        }
+    }
+    &-full-page {
+        overflow-x: hidden;
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #fafafa !important;
+        .details input {
+            background-color: #fff
+        }
+    }
+}
+
+@media (max-width:480px) {
+    .page-404,
+    .page-500 {
+        .details,
+        .number {
+            text-align: center;
+            margin-left: 0
+        }
+    }
+    .page-404-full-page {
+        .page-404 {
+            margin-top: 30px
+        }
+    }
+    .page-404-3 .error-404 {
+        text-align: left;
+        padding-top: 10px
+    }
+    .page-404-3 .page-inner img {
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        position: fixed
+    }
+}

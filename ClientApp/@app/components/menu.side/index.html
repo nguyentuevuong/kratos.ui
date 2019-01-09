@@ -1,0 +1,42 @@
+<form class="search-menu d-flex align-items-center">
+    <div class="input-group px-2 pb-2">
+        <input class="form-control" data-bind="value: $vm.keyword, valueUpdate: 'afterkeydown'">
+        <div class="input-group-append">
+            <button class="btn btn-primary">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <button class="btn btn-link d-md-none p-0" type="button" data-toggle="collapse" data-target="#bd-docs-nav"
+        aria-controls="bd-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+        <i class="fa fa-bars fa-2x"></i>
+    </button>
+</form>
+<div class="sidebar-sticky noselect">
+    <nav class="collapse show" id="bd-docs-nav">
+        <ul class="nav flex-column nav-sample" data-bind="foreach: { data: $vm.routes, as: 'r'}">
+            <li class="nav-item">
+                <!-- ko if: r.component -->
+                <a class="nav-link" data-bind='href: r.component.url'>
+                    <i data-bind="attr: { 'class': r.component.icon }"></i>
+                    <span data-bind="i18n: r.component.title"></span>
+                </a>
+                <!-- /ko -->
+                <!-- ko if: !r.component -->
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 pt-2 pb-1 text-muted">
+                    <span data-bind="i18n: r.name"></span>
+                    <i class="fa" data-bind="css: 'fa-plus-circle'"></i>
+                </h6>
+                <ul class="nav flex-column nav-sample" data-bind="foreach: { data: r.childs, as: 'c'}">
+                    <li class="nav-item">
+                        <a class="nav-link" data-bind='href: c.component.url'>
+                            <i data-bind="attr: { 'class': c.component.icon }"></i>
+                            <span data-bind="i18n: c.component.title"></span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /ko -->
+            </li>
+        </ul>
+    </nav>
+</div>

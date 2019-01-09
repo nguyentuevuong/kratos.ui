@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top flex-md-nowrap">
+    <div class="dropdown">
+        <a class="navbar-brand" href="#" data-toggle="dropdown">
+            <i class="fab fa-windows"></i>
+        </a>
+        <div class="dropdown-menu">
+            <div class="menu-group" data-bind="foreach: [1, 2, 3]">
+                <a class="dropdown-item" href="/sample/focus">
+                    <i class="fa fa-tachometer"></i>
+                    <span data-bind="i18n: 'Sample url'"></span>
+                </a>
+            </div>
+            <div class="menu-group">
+                <a class="dropdown-item" href="/sample/focus">
+                    <i class="fa fa-tachometer"></i>
+                    <span>North central</span>
+                </a>
+                <a class="dropdown-item" href="/sample/focus">
+                    <i class="fa fa-hospital-o"></i>
+                    <span>Middle central</span>
+                </a>
+                <a class="dropdown-item" href="/sample/focus">
+                    <i class="fa fa-stack-overflow"></i>
+                    <span>South central</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/sample/index">
+                    <i class="fa fa-support"></i>
+                    <span data-bind="i18n: '#sample'"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse">
+        <i class="fa fa-bars"></i>
+    </button>
+    <div class="navbar-collapse collapse">
+        <ul class="navbar-nav mr-auto">
+            <!-- ko foreach: { data: routes, as: 'r'} -->
+            <!-- ko if: r.component -->
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" data-bind='href: r.component.url'>
+                    <i data-bind="attr: { 'class': r.component.icon }"></i>
+                    <span data-bind="i18n: r.component.title"></span>
+                </a>
+            </li>
+            <!-- /ko -->
+            <!-- ko if: !r.component -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="javascript: void(0);" data-toggle="dropdown">
+                    <i class="fas fa-ellipsis-v"></i>
+                    <span data-bind="i18n: r.name"></span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" data-bind="foreach: { data: r.childs, as: 'c' }">
+                    <a class="dropdown-item" data-bind='href: c.component.url'>
+                        <i data-bind="attr: { 'class': c.component.icon }"></i>
+                        <span data-bind="i18n: c.component.title"></span>
+                    </a>
+                </div>
+            </li>
+            <!-- /ko -->
+            <!-- /ko -->
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="/no-page/1">
+                    <i class="fab fa-creative-commons-nd"></i>
+                    <span>No page 1</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+            <li data-bind="lang: 'vi'" class="nav-item dropdown"></li>
+        </ul>
+    </div>
+</nav>
