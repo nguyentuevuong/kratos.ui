@@ -1,0 +1,10 @@
+{
+    "vi": {
+        "product": "Hàng hóa",
+        "product_khohang": "Kho hàng"
+    },  
+    "en": {
+       
+        "product_khohang": "Warehouse"
+    }
+}

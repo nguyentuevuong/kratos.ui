@@ -1,0 +1,10 @@
+{
+    "vi": {
+        "product": "Hàng hóa",
+        "product_add": "Thiết lập giá"
+    },  
+    "en": {
+       
+        "product_add": "Set prices"
+    }
+}

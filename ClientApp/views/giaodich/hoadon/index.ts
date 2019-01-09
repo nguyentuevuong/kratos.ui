@@ -1,12 +1,11 @@
 import { component } from '@app/common/ko';
-
 @component({
-    url: '/product/list',
-    icon: "fas fa-list",
-    title: '#product_list',
+    url: '/giaodich/hoadon',
+    icon: "fas fa-exchange-alt",
+    title: '#giaodich_hoadon',
     template: require('./index.html'),
     resources: require('./resources.json')
 })
-export class ProductListViewModel {
+export class GiaoDichHoaDonViewModel {
 
 }

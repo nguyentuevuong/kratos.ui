@@ -1,0 +1,10 @@
+{
+    "vi": {
+        "giaodich": "Giao dịch",
+        "giaodich_trahangnhap": "Trả hàng nhập"
+    },  
+    "en": {
+       
+        "giaodich_trahangnhap": "Order"
+    }
+}
