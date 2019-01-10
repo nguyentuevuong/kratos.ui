@@ -1,0 +1,10 @@
+{
+    "vi": {
+        "doitac": "Đối tác",
+        "doitac_khachhang": "Khách hàng"
+    },  
+    "en": {
+       
+        "doitac_khachhang": "Order"
+    }
+}

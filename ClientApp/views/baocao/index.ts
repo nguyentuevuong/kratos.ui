@@ -1,0 +1,9 @@
+import '@views/baocao/banhang';
+import '@views/baocao/cuoingay';
+import '@views/baocao/dathang';
+import '@views/baocao/hanghoa';
+import '@views/baocao/kenhbanhang';
+import '@views/baocao/nhacungcap';
+import '@views/baocao/nhanvien';
+import '@views/baocao/taichinh';
+import '@views/baocao/khachhang';

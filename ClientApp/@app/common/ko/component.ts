@@ -69,6 +69,8 @@ const Components: IComponent[] = [],
                 params.styles = `<style type='text/css'>${rid} ${params.styles}</style>`;
             }
 
+            console.log(params.styles);
+
             let hasUrl = !!params.url,
                 viewName = params.name;
             ko.components.register(viewName, ko.utils.extend({

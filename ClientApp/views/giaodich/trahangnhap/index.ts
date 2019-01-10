@@ -1,7 +1,7 @@
 import { component } from '@app/common/ko';
 @component({
     url: '/giaodich/trahangnhap',
-    icon: "fas fa-exchange-alt",
+    icon: "far fa-share-square",
     title: '#giaodich_trahangnhap',
     template: require('./index.html'),
     resources: require('./resources.json')

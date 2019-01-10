@@ -1,0 +1,19 @@
+.card-body {
+    padding: 0.25rem;
+}
+
+.accordion {
+    margin-top: 15px;
+    .card-header {
+        padding: 0.01rem;
+    }
+    .list-group-item {
+        padding: 0.25rem;
+    }
+}
+
+.btn-toolbar {
+    .btn-group:not(:last-child) {
+        margin-right: 7px;
+    }
+}

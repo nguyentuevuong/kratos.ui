@@ -1,0 +1,10 @@
+{
+    "vi": {
+        "baocao": "Báo cáo",
+        "baocao_banhang": "Bán hàng"
+    },  
+    "en": {
+       
+        "baocao_banhang": "Order"
+    }
+}

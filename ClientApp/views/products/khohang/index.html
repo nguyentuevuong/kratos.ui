@@ -1,2 +1,136 @@
-<div data-bind="i18n: 'product_khohang'"></div>
-
+<div class="row">
+        <div class="col-md-2">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Tìm kiếm</h5>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Theo mã, tên hàng" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Theo mô tả đặt hàng" aria-label="Username">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="accordion">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button">
+                            Trạng thái
+                            </button>
+                        </h5>
+                    </div>
+                    <div class="collapse show">
+                        <ul class="list-group">
+                            <li class="list-group-item">Hàng hóa</li>
+                            <li class="list-group-item">Dịch vụ</li>
+                            <li class="list-group-item">Combo + đóng gói</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button">
+                               Thời gian
+                            </button>
+                        </h5>
+                    </div>
+                    <div class="collapse show">
+                            <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Theo mã, tên hàng" aria-label="Username"
+                                        aria-describedby="basic-addon1">
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Theo mô tả đặt hàng" aria-label="Username">
+                                </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button">
+                             Lựa chọn hiển thị
+                            </button>
+                        </h5>
+                    </div>
+                    <div class="collapse show">
+                        <ul class="list-group">
+                            <li class="list-group-item">Hàng hóa</li>
+                            <li class="list-group-item">Dịch vụ</li>
+                            <li class="list-group-item">Combo + đóng gói</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-8">
+                    <div>
+                        <h2>Phiếu kiểm kho</h2>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class=" btn-toolbar mb-3">
+                        <!-- Example single danger button -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-success">Kiểm kho</button>
+                        </div><!-- /btn-group -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-info">Xuất file</button>
+                        </div><!-- /btn-group -->
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                Thêm mới
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Separated link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered">
+                    <thead>
+                        <th>Mã kiểm kho</th>
+                        <th>Thời gian</th>
+                        <th>Ngày cân bằng</th>
+                        <th>Tổng chênh lệch</th>
+                        <th>Số lượng lệch tăng</th>
+                        <th>Số lượng lệch giảm</th>
+                        <th>Ghi chú</th>
+                        <th>Trạng thái</th>
+                    </thead>
+                    <tbody data-bind="foreach: [1,2,3,4,5,6,7,8,9,0]">
+                        <tr>
+                            <td>#</td>
+                            <td>20-09-2018</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>

@@ -1,10 +1,10 @@
 {
     "vi": {
-        "hello": "Xin chào!",
-        "product_list": "Danh mục sản phẩm"
+        "hello": "Xin chào!"
+      
     },  
     "en": {
-        "hello": "Hello world!",
-        "product_list": "Products"
+        "hello": "Hello world!"
+        
     }
 }
