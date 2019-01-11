@@ -75,11 +75,10 @@ export class InputMaskCore {
             event.stopImmediatePropagation();
         });
 
-        // select
-        regEvent(ctrl, 'mouseup', self.mouseup.bind(self));
 
-        // move caret to lastest input value
-        regEvent(ctrl, 'focus', () => { self.render() });
+        // move caret to moveable point
+        regEvent(ctrl, 'focus', self.mouseup.bind(self));
+        regEvent(ctrl, 'mouseup', self.mouseup.bind(self));
 
         // disable move caret by keydown
         regEvent(ctrl, 'keydown', self.move.bind(self));
@@ -220,15 +219,34 @@ export class InputMaskCore {
     }
 
     protected mouseup(event: MouseEvent) {
-        let self = this;
+        let self = this,
+            caret = self.values.indexOf('_');
 
         if (self.masked) {
-            if (self.caret <= self.minCaret) {
-                self.render(self.minCaret);
+            if (caret > -1) {
+                if (caret <= self.minCaret) {
+                    self.caret = self.minCaret;
+                } else if (caret >= self.maxCaret) {
+                    self.caret = self.maxCaret;
+                } else {
+                    self.caret = caret;
+
+                    if (!self.moveables[caret]) {
+                        self.caret = self.nextCaret;
+                    }
+                }
+            } else if (self.caret <= self.minCaret) {
+                self.caret = self.minCaret;
             } else if (self.caret >= self.maxCaret) {
-                self.render(self.maxCaret)
+                self.caret = self.maxCaret;
             } else if (!self.moveables[self.caret]) {
-                self.render(self.nextCaret);
+                self.caret = self.nextCaret;
+            } else {
+                self.caret = self.caret;
+
+                if (!self.moveables[self.caret]) {
+                    self.caret = self.nextCaret;
+                }
             }
 
             event.preventDefault();
