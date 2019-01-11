@@ -1,2 +1,169 @@
-<div data-bind="i18n: 'doitac_nhacungcap'"></div>
+<div class="row">
+    <div class="col-md-2">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Nhóm nhà cung cấp</h5>
+                <div class="input-group mb-1">
+                    <select class="custom-select">
+                        <option value="">abc</option>
+                    </select>
+                </div>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Tìm kiếm</h5>
+                <div class="input-group mb-1">
+                    <input type="text" class="form-control" placeholder="Theo mã, tên hàng">
+                </div>
+            </div>
+        </div>
 
+        <div class="accordion">
+            <div class="card">
+                <div class="card-header mb-1">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button">
+                            Tổng mua
+                        </button>
+                    </h5>
+                </div>
+                <div class="collapse show">
+                    <div class="input-group mb-1">
+                        <label>Từ: </label>
+                        <input type="text" class="form-control" placeholder="giá trị">
+                    </div>
+                    <div class="input-group mb-1">
+                        <label>Tới:</label>
+                        <input type="text" class="form-control" placeholder="giá trị">
+                    </div>
+                </div>
+                <div class="input-group mb-1">
+                    <select class="custom-select">
+                        <option value="">abc</option>
+                    </select>
+                </div>
+                <div class="collapse show">
+                    <div class="input-group mb-1">
+                        <input type="text" class="form-control" placeholder="Theo mã, tên hàng">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header mb-1">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button">
+                            Nợ hiện tại
+                        </button>
+                    </h5>
+                </div>
+                <div class="collapse show">
+                    <div class="input-group mb-1">
+                        <label>Từ: </label>
+                        <input type="text" class="form-control" placeholder="giá trị">
+                    </div>
+                    <div class="input-group mb-1">
+                        <label>Tới:</label>
+                        <input type="text" class="form-control" placeholder="giá trị">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button">
+                            Trạng thái
+                        </button>
+                    </h5>
+                </div>
+                <div class="collapse show">
+                    <ul class="list-group">
+                        <li class="list-group-item">Tất cả</li>
+                        <li class="list-group-item">Cá nhân</li>
+                        <li class="list-group-item">Công ty</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button">
+                            Lựa chọn hiển thị
+                        </button>
+                    </h5>
+                    <div class="input-group mb-1">
+                        <label for="">Số bản ghi:</label>
+                        <select class="custom-select">
+                            <option value="">abc</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <div class="row">
+            <div class="col-md-7">
+                <div>
+                    <h2>Nhà cung cấp</h2>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class=" btn-toolbar mb-3">
+                    <!-- Example single danger button -->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success">Nhà cung cấp</button>
+                    </div><!-- /btn-group -->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success">Import</button>
+                    </div><!-- /btn-group -->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success">Xuất file</button>
+                    </div><!-- /btn-group -->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Thêm mới
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <th>Mã nhà cung cấp</th>
+                    <th>Tên nhà cung cấp</th>
+                    <th>Điện thoại</th>
+                    <th>Email</th>
+                    <th>Nợ cần trả hiện tại</th>
+                    <th>Tổng mua</th>
+                </thead>
+                <tbody data-bind="foreach: [1,2,3,4]">
+                    <tr>
+                        <td>KH01</td>
+                        <td>Nguyễn Văn A</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

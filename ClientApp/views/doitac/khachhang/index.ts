@@ -3,6 +3,7 @@ import { component } from '@app/common/ko';
     url: '/doitac/khachhang',
     icon: "far fa-user",
     title: '#doitac_khachhang',
+    styles: require('./style.scss'),
     template: require('./index.html'),
     resources: require('./resources.json')
 })

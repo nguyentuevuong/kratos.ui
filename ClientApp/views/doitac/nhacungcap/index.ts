@@ -3,6 +3,7 @@ import { component } from '@app/common/ko';
     url: '/doitac/nhacungcap',
     icon: "fas fa-undo-alt",
     title: '#doitac_nhacungcap',
+    styles: require('./style.scss'),
     template: require('./index.html'),
     resources: require('./resources.json')
 })
