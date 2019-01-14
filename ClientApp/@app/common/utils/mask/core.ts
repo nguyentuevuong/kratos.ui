@@ -75,10 +75,12 @@ export class InputMaskCore {
             event.stopImmediatePropagation();
         });
 
-
         // move caret to moveable point
         regEvent(ctrl, 'focus', self.mouseup.bind(self));
         regEvent(ctrl, 'mouseup', self.mouseup.bind(self));
+
+        // preventDefault for ime
+        regEvent(ctrl, 'input', () => { self.render(); });
 
         // disable move caret by keydown
         regEvent(ctrl, 'keydown', self.move.bind(self));
