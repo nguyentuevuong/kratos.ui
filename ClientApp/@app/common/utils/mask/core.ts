@@ -1,11 +1,5 @@
 import { ko } from '@app/providers';
 
-interface ISelection {
-    start: number;
-    end: number;
-    direction?: string;
-}
-
 interface IOptions {
     mask: string;
     definitions: {
@@ -472,10 +466,11 @@ export class InputMaskCore {
     public updateMask(mask: IOptions | Array<string | RegExp | Function>) {
         let self = this;
 
+        self.masks = [];
+        self.values = [];
+
         if (Array.isArray(mask)) {
             if (mask.length > 0) {
-                self.masks = [];
-                self.values = [];
 
                 mask.forEach(m => {
                     if (typeof m != 'string') {
@@ -484,24 +479,13 @@ export class InputMaskCore {
                         [].slice.call(m).forEach(s => self.masks.push(s));
                     }
                 });
-            } else {
-                let value = self.values.join('');
-
-                self.values = [];
-                self.value = value;
             }
         } else if (mask.mask) {
-            self.masks = [];
-            self.values = [];
-
             [].slice.call(mask.mask).forEach((c: string) => {
                 self.masks.push(mask.definitions[c] || c);
             });
-        } else {
-            let value = self.values.join('');
-
-            self.values = [];
-            self.value = value;
         }
+
+        self.value = self.values.join('');
     }
 }
