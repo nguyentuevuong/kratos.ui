@@ -24,9 +24,9 @@
                 </div>
                 <div class="collapse show">
                     <ul class="list-group">
-                        <li class="list-group-item">Hàng hóa</li>
-                        <li class="list-group-item">Dịch vụ</li>
-                        <li class="list-group-item">Combo + đóng gói</li>
+                        <li class="list-group-item"> <input type="checkbox">Hàng hóa</li>
+                        <li class="list-group-item"> <input type="checkbox">Dịch vụ</li>
+                        <li class="list-group-item"> <input type="checkbox">Combo + đóng gói</li>
                     </ul>
                 </div>
             </div>
@@ -40,11 +40,11 @@
                 </div>
                 <div class="collapse show">
                     <ul class="list-group">
-                        <li class="list-group-item">Tất cả</li>
-                        <li class="list-group-item">Dưới định mức tồn</li>
-                        <li class="list-group-item">Vượt định mức tồn</li>
-                        <li class="list-group-item">Còn hàng trong kho</li>
-                        <li class="list-group-item">Hết hàng trong kho</li>
+                        <li class="list-group-item"> <input type="radio">Tất cả</li>
+                        <li class="list-group-item"> <input type="radio">Dưới định mức tồn</li>
+                        <li class="list-group-item"> <input type="radio">Vượt định mức tồn</li>
+                        <li class="list-group-item"> <input type="radio">Còn hàng trong kho</li>
+                        <li class="list-group-item"> <input type="radio">Hết hàng trong kho</li>
                     </ul>
                 </div>
             </div>
@@ -76,9 +76,9 @@
                 </div>
                 <div class="collapse show">
                     <ul class="list-group">
-                        <li class="list-group-item">Hàng hóa</li>
-                        <li class="list-group-item">Dịch vụ</li>
-                        <li class="list-group-item">Combo + đóng gói</li>
+                        <li class="list-group-item"><input type="radio">Hàng hóa</li>
+                        <li class="list-group-item"><input type="radio">Dịch vụ</li>
+                        <li class="list-group-item"><input type="radio">Combo + đóng gói</li>
                     </ul>
                 </div>
             </div>
@@ -92,17 +92,23 @@
                 </div>
                 <div class="collapse show">
                     <ul class="list-group">
-                        <li class="list-group-item">Hàng hóa</li>
-                        <li class="list-group-item">Dịch vụ</li>
-                        <li class="list-group-item">Combo + đóng gói</li>
+                        <li class="list-group-item"><input type="radio">Hàng hóa</li>
+                        <li class="list-group-item"><input type="radio">Dịch vụ</li>
+                        <li class="list-group-item"><input type="radio">Combo + đóng gói</li>
                     </ul>
+                </div>
+                <div class="input-group mb-1">
+                    <label for="">Số bản ghi:</label>
+                    <select class="custom-select">
+                        <option value="">abc</option>
+                    </select>
                 </div>
             </div>
         </div>
     </div>
     <div class="col-md-10">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-7">
                 <div>
                     <h2>Hàng hóa</h2>
                 </div>
@@ -110,7 +116,7 @@
                     Thêm | Sửa | Xóa
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class=" btn-toolbar mb-3">
                     <!-- Example single danger button -->
                     <div class="btn-group">
@@ -123,6 +129,7 @@
                             <a class="dropdown-item" href="#"><i class="fas fa-plus"></i>Thêm combo-đóng gói</a>
                         </div>
                     </div>
+                    
                     <div class="btn-group">
                         <button type="button" class="btn btn-success"><i class="fas fa-sign-in-alt"></i> Import</button>
                     </div>
@@ -132,12 +139,52 @@
                     <div class="btn-group">
                         <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><i class="fas fa-table"></i>
                         </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="menu-group" data-bind="foreach: [1]">
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Hình ảnh
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Mã hàng hóa
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Tên hàng
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Nhóm hàng
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Loại hàng
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Giá bán
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Giá vốn
+                                </a>
+
+                            </div>
+                            <div class="menu-group">
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Tồn kho
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Vị trí
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Đặt NCC
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Định mức tồn ít nhất
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Định mức tồn nhiều nhất
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Trạng thái
+                                </a>
+
+                            </div>
                         </div>
                     </div>
                 </div>
