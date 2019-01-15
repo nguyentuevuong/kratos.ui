@@ -37,7 +37,7 @@ export class ModalBindingHandler implements KnockoutBindingHandler {
                     if (size.indexOf('modal-') == -1) {
                         size = 'modal-' + size;
                     }
-                    
+
                     dom.addClass(dialog, size);
                 }
 
@@ -63,6 +63,8 @@ export class ModalBindingHandler implements KnockoutBindingHandler {
 
                 document.body.appendChild(modal);
 
+                dom.addClass(document.body, 'modal-open');
+
                 dom.addClass(modal, 'animated fadeInDown show');
 
                 // close dialog
@@ -70,6 +72,7 @@ export class ModalBindingHandler implements KnockoutBindingHandler {
                     ko.cleanNode(content);
 
                     document.body.removeChild(modal);
+                    dom.removeClass(document.body, 'modal-open');
                 });
             }
         });
