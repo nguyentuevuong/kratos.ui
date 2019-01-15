@@ -28,7 +28,7 @@ export class ModalBindingHandler implements KnockoutBindingHandler {
                     title = dom.create('h4', { 'class': 'modal-title' }),
                     close = dom.create('span', { 'class': 'close', html: '&times;' }),
                     body = dom.create('div', { 'class': 'modal-body' }),
-                    _comp = ko.utils.arrayFirst(Modals, (c: IComponent) => _.isEqual(c.name, viewName));
+                    _comp = ko.utils.arrayFirst(Modals, (c: IComponent) => c.name == viewName);
 
 
                 if (configs && configs.size) {
@@ -69,7 +69,7 @@ export class ModalBindingHandler implements KnockoutBindingHandler {
 
                 // close dialog
                 regEvent(close, 'click', (evt: MouseEvent) => {
-                    ko.cleanNode(content);
+                    ko.cleanNode(body);
 
                     document.body.removeChild(modal);
                     dom.removeClass(document.body, 'modal-open');
