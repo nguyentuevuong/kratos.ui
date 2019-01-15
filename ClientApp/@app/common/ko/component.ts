@@ -2,7 +2,8 @@ import { ko } from '@app/providers';
 import { i18n } from '@app/common/lang';
 import { md5, random } from '@app/common/utils';
 
-const Components: IComponent[] = [],
+const Modals: IComponent[] = [],
+    Components: IComponent[] = [],
     /**
      * Register Knockout component by decorating ViewModel class
      **/
@@ -22,7 +23,14 @@ const Components: IComponent[] = [],
             }
 
             // add all component to component
-            if (params.url) {
+            if (!params.url) {
+                Modals.push({
+                    url: "",
+                    name: params.name || id,
+                    icon: params.icon || 'd-none',
+                    title: params.title || params.name
+                });
+            } else {
                 Components.push({
                     url: `/${params.url}`.replace(/\/+/gi, "/"),
                     name: params.name || id,
@@ -92,4 +100,4 @@ const Components: IComponent[] = [],
         };
     };
 
-export { Components, component };
+export { Modals, Components, component };
