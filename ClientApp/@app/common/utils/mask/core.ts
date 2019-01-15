@@ -1,11 +1,5 @@
 import { ko } from '@app/providers';
 
-interface ISelection {
-    start: number;
-    end: number;
-    direction?: string;
-}
-
 interface IOptions {
     mask: string;
     definitions: {
@@ -49,29 +43,38 @@ export class InputMaskCore {
         let self = this,
             ctrl = self.ctrl;
 
-        regEvent(ctrl, 'copy', (evt: PasteEvent) => {
-            evt.clipboardData.setData('text/plain', self.value);
-            evt.preventDefault();
+        regEvent(ctrl, 'select', () => {
+            self.caret = self.caret;
+
+            if (!self.moveables[self.caret]) {
+                self.caret = self.nextCaret;
+            }
         });
 
-        regEvent(ctrl, 'paste', (evt: PasteEvent) => {
-            self.value = evt.clipboardData.getData('text/plain');
-            evt.preventDefault();
-        });
-
-        regEvent(ctrl, 'selectstart', (event: Event) => {
+        // prevent drop/select event
+        regEvent(ctrl, 'drop', (event: DragEvent) => {
             event.preventDefault();
             event.stopImmediatePropagation();
         });
 
-        // move caret to lastest input value
-        regEvent(ctrl, 'focus', () => { self.render() });
+        regEvent(ctrl, 'copy', (event: PasteEvent) => {
+            event.clipboardData.setData('text/plain', self.value);
+            event.preventDefault();
+            event.stopImmediatePropagation();
+        });
 
-        // prevent drop/select event
-        regEvent(ctrl, 'drop', (evt: DragEvent) => { evt.preventDefault() });
+        regEvent(ctrl, 'paste', (event: PasteEvent) => {
+            self.value = event.clipboardData.getData('text/plain');
+            event.preventDefault();
+            event.stopImmediatePropagation();
+        });
 
-        // select
+        // move caret to moveable point
+        regEvent(ctrl, 'focus', self.mouseup.bind(self));
         regEvent(ctrl, 'mouseup', self.mouseup.bind(self));
+
+        // preventDefault for ime
+        regEvent(ctrl, 'input', () => { self.render(); });
 
         // disable move caret by keydown
         regEvent(ctrl, 'keydown', self.move.bind(self));
@@ -79,8 +82,6 @@ export class InputMaskCore {
         regEvent(ctrl, 'keydown', self.remove.bind(self));
 
         regEvent(ctrl, 'keydown', self.keydown.bind(self));
-
-        //regEvent(ctrl, 'keyup', self.keyup.bind(self));
     }
 
     /**
@@ -156,7 +157,7 @@ export class InputMaskCore {
                     }
                 }
             }),
-            liot = steps.lastIndexOf(true) + 1,
+            lioft = steps.lastIndexOf(true) + 1,
             comps = steps.map((m: boolean | undefined, i: number) => mask[i] == m)
                 .indexOf(false);
 
@@ -164,8 +165,8 @@ export class InputMaskCore {
             steps[comps] = true;
         }
 
-        if (liot >= comps) {
-            steps[liot] = true;
+        if (lioft >= comps) {
+            steps[lioft] = true;
         }
 
         return steps;
@@ -185,47 +186,7 @@ export class InputMaskCore {
             .filter(m => m != -1)[0];
     }
 
-    private get selection(): ISelection {
-        let self = this,
-            ctrl = self.ctrl;
-
-        return { start: ctrl.selectionStart || 0, end: ctrl.selectionEnd || 0, direction: '' };
-    }
-
-    private set selection(range: ISelection) {
-        let self = this,
-            masks = self.masks.map(m => typeof m == 'string'),
-            froto = masks.filter((m: boolean, i: number) => i >= range.start && i < range.end),
-            allst = !!froto.filter(m => !m).length;
-
-        if (allst) {
-            if (typeof self.masks[range.start] == 'string') {
-                let rights = masks.filter((m: boolean, i: number) => i >= range.start + 1 && i <= range.end),
-                    steps = rights.filter((m: boolean, i: number) => i < rights.indexOf(false));
-
-                range.start += steps.length;
-            }
-
-            if (typeof self.masks[range.end - 1] == 'string') {
-                let lefts = masks.filter((m: boolean, i: number) => i >= range.start && i <= range.end - 1),
-                    steps = lefts.filter((m: boolean, i: number) => i > lefts.lastIndexOf(false));
-
-                range.end -= steps.length;
-            }
-        } else {
-            let next = range.start + masks.filter((m: boolean, i: number) => i >= range.start).indexOf(false);
-
-            if (next > self.maxCaret) {
-                next = self.maxCaret;
-            }
-
-            range = { start: next, end: next };
-        }
-
-        self.ctrl.setSelectionRange(range.start, range.end);
-    }
-
-    protected render(start?: number, end?: number) {
+    protected render(caret?: number) {
         let self = this;
 
         if (self.masked) {
@@ -241,61 +202,51 @@ export class InputMaskCore {
                 return self.values[i];
             }).join('');
 
-            if (start != undefined && end == undefined) {
-                self.caret = start;
-            } else if (start != undefined && end != undefined) {
-                if (start <= self.minCaret) {
-                    start = self.minCaret;
-                } else if (end >= self.maxCaret) {
-                    end = self.maxCaret;
-                }
+            if (!!caret) {
+                self.caret = caret;
 
-                self.selection = { start: <number>start, end: <number>end }
+                if (!self.moveables[caret]) {
+                    self.caret = self.nextCaret;
+                }
             } else {
-                let cr = self.values.indexOf('_');
-                self.caret = cr > -1 ? cr : self.maxCaret || 0;
+                self.caret = self.maxCaret;
             }
         }
     }
 
     protected mouseup(event: MouseEvent) {
         let self = this,
-            range = self.selection;
+            caret = self.values.indexOf('_');
 
         if (self.masked) {
-            if (range.start == range.end) {
-                if (self.caret <= self.minCaret) {
-                    self.render(self.minCaret);
-                } else if (self.caret >= self.maxCaret) {
-                    self.render(self.maxCaret)
+            if (caret > -1) {
+                if (caret <= self.minCaret) {
+                    self.caret = self.minCaret;
+                } else if (caret >= self.maxCaret) {
+                    self.caret = self.maxCaret;
                 } else {
-                    if (typeof self.masks[self.caret] == 'string') {
-                        self.caret += 1;
-                        self.mouseup(event);
-                    } else {
-                        self.render(self.caret);
+                    self.caret = caret;
+
+                    if (!self.moveables[caret]) {
+                        self.caret = self.nextCaret;
                     }
                 }
+            } else if (self.caret <= self.minCaret) {
+                self.caret = self.minCaret;
+            } else if (self.caret >= self.maxCaret) {
+                self.caret = self.maxCaret;
+            } else if (!self.moveables[self.caret]) {
+                self.caret = self.nextCaret;
             } else {
-                if (range.start <= self.minCaret && range.end <= self.minCaret) {
-                    self.render(self.minCaret);
-                } else if (range.start >= self.maxCaret && range.end >= self.maxCaret) {
-                    self.render(self.maxCaret);
-                } else if ((range.start <= self.minCaret && range.end >= self.maxCaret) ||
-                    (range.end <= self.minCaret && range.start >= self.maxCaret)) {
-                    self.render(self.maxCaret);
-                    //self.render(self.minCaret, self.maxCaret);
-                } else if (range.start <= self.minCaret && range.end < self.maxCaret) {
-                    self.render(range.end);
-                    //self.render(self.minCaret, range.end);
-                } else if (range.start > self.minCaret && range.end >= self.maxCaret) {
-                    self.render(self.maxCaret);
-                    //self.render(range.start, self.maxCaret);
-                } else {
-                    self.render(range.end);
-                    //self.render(range.start, range.end);
+                self.caret = self.caret;
+
+                if (!self.moveables[self.caret]) {
+                    self.caret = self.nextCaret;
                 }
             }
+
+            event.preventDefault();
+            event.stopImmediatePropagation();
         }
     }
 
@@ -319,26 +270,29 @@ export class InputMaskCore {
                     event.preventDefault();
                     event.stopImmediatePropagation();
                 } else if (event.keyCode == 8) {
-                    if (self.selection.start == self.selection.end) {
-                        if (self.caret <= self.minCaret) {
-                            self.caret = self.minCaret;
+                    if (self.caret <= self.minCaret) {
+                        self.caret = self.minCaret;
 
-                            event.preventDefault();
-                            event.stopImmediatePropagation();
-                        } else if (masks[self.caret - 1]) {
-                            self.caret = self.prevCaret + 1;
-                        }
+                        event.preventDefault();
+                        event.stopImmediatePropagation();
+                    } else if (masks[self.caret - 1]) {
+                        self.caret = self.prevCaret + 1;
                     }
                 }
             } else {
-                if (event.keyCode == 37 && self.caret > self.minCaret) {
-                    self.selection = { start: self.caret - 1, end: self.selection.end };
+                if (self.caret >= self.minCaret && self.caret <= self.maxCaret) {
+                    if (event.keyCode == 37) {
+                        self.caret = self.prevCaret;
 
-                    event.preventDefault();
-                    event.stopImmediatePropagation();
-                } else if (event.keyCode == 39 && self.caret < self.maxCaret) {
-                    self.selection = { start: self.selection.start, end: self.caret + 1 };
+                        event.preventDefault();
+                        event.stopImmediatePropagation();
+                    } else if (event.keyCode == 39) {
+                        self.caret = self.nextCaret;
 
+                        event.preventDefault();
+                        event.stopImmediatePropagation();
+                    }
+                } else {
                     event.preventDefault();
                     event.stopImmediatePropagation();
                 }
@@ -348,44 +302,25 @@ export class InputMaskCore {
 
     protected remove(event: KeyboardEvent) {
         let self = this,
-            caret = self.caret,
-            range = self.selection;
+            caret = self.caret;
 
         if (self.masked) {
             if (!event.shiftKey) {
                 if (event.which === 8) { // backspace
-                    if (range.start !== range.end) {
-                        for (let i = range.end - 1; i >= range.start; i--) {
-                            self.pushHistory(self.value);
+                    if (typeof self.masks[self.prevCaret] === 'string') {
+                        self.caret = self.prevCaret;
+                        self.keydown(event);
+                    } else if (self.masks[self.prevCaret] instanceof RegExp || self.masks[self.prevCaret] instanceof Function) {
+                        self.pushHistory(self.value);
 
-                            self.values[i] = '_';
-                        }
-
-                        self.render(range.start);
-                    } else {
-                        if (typeof self.masks[caret - 1] === 'string') {
-                            self.caret = self.prevCaret;
-                            self.keydown(event);
-                        } else if (self.masks[caret - 1] instanceof RegExp || self.masks[caret - 1] instanceof Function) {
-                            self.pushHistory(self.value);
-
-                            self.values[caret - 1] = '_';
-                            self.render(caret - 1);
-                        }
+                        self.values[self.prevCaret] = '_';
+                        self.render(self.prevCaret);
                     }
 
                     event.preventDefault();
                     event.stopImmediatePropagation();
                 } else if (event.which == 46) { // delete
-                    if (range.start !== range.end) {
-                        for (let i = range.end - 1; i >= range.start; i--) {
-                            self.pushHistory(self.value);
-
-                            self.values[i] = '_';
-                        }
-
-                        self.render(range.start);
-                    } else if (self.masks[caret] instanceof RegExp || self.masks[caret] instanceof Function) {
+                    if (self.masks[caret] instanceof RegExp || self.masks[caret] instanceof Function) {
                         if (self.values[caret] != '_') {
                             self.pushHistory(self.value);
 
@@ -531,10 +466,11 @@ export class InputMaskCore {
     public updateMask(mask: IOptions | Array<string | RegExp | Function>) {
         let self = this;
 
+        self.masks = [];
+        self.values = [];
+
         if (Array.isArray(mask)) {
             if (mask.length > 0) {
-                self.masks = [];
-                self.values = [];
 
                 mask.forEach(m => {
                     if (typeof m != 'string') {
@@ -543,24 +479,13 @@ export class InputMaskCore {
                         [].slice.call(m).forEach(s => self.masks.push(s));
                     }
                 });
-            } else {
-                let value = self.values.join('');
-
-                self.values = [];
-                self.value = value;
             }
         } else if (mask.mask) {
-            self.masks = [];
-            self.values = [];
-
             [].slice.call(mask.mask).forEach((c: string) => {
                 self.masks.push(mask.definitions[c] || c);
             });
-        } else {
-            let value = self.values.join('');
-
-            self.values = [];
-            self.value = value;
         }
+
+        self.value = self.values.join('');
     }
 }

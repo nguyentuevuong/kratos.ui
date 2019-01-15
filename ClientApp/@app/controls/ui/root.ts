@@ -1,5 +1,5 @@
 import { ko } from '@app/providers';
-import { handler, component } from '@app/common/ko';
+import { handler } from '@app/common/ko';
 
 /**
  * root binding for spa

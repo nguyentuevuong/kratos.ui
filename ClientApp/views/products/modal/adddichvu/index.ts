@@ -1,12 +1,12 @@
 import { component } from '@app/common/ko';
 
 @component({
-    title: 'product_addproducts',
-    url: '/product/modal-addproducts',
+    title: 'product_adddichvu',
+    url: '/product/modal-adddichvu',
     icon: "fas fa-list",
     template: require('./index.html'),
     resources: require('./resources.json')
 })
-export class ProductModalAddProductsViewModel {
+export class ProductModalAddDichVuViewModel {
 
 }
