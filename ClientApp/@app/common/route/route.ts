@@ -44,6 +44,7 @@ history.listener((data: any, url: string) => {
     if (!component) {
         ko.router.current({
             url: url,
+            icon: 'd-none',
             name: 'page_404',
             title: '#page_404'
         });
