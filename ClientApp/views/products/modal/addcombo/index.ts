@@ -1,9 +1,8 @@
 import { component } from '@app/common/ko';
 
 @component({
+    name: 'combodonggoi',
     title: 'product_addcombo',
-    url: '/product/modal-addcombo',
-    icon: "fas fa-list",
     template: require('./index.html'),
     resources: require('./resources.json')
 })

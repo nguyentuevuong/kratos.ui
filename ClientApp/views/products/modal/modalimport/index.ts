@@ -2,11 +2,10 @@ import { component } from '@app/common/ko';
 
 @component({
     title: 'product_modalimport',
-    url: '/product/modal-modalimport',
-    icon: "fas fa-list",
+    name: "import",
     template: require('./index.html'),
     resources: require('./resources.json')
 })
-export class ProductModalAddProductsViewModel {
+export class ProductModalImportViewModel {
 
 }

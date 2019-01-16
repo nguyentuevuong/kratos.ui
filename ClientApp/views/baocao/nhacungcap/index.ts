@@ -3,6 +3,7 @@ import { component } from '@app/common/ko';
     url: '/baocao/nhacungcap',
     icon: "fas fa-undo-alt",
     title: '#baocao_nhacungcap',
+    styles: require('./style.scss'),
     template: require('./index.html'),
     resources: require('./resources.json')
 })

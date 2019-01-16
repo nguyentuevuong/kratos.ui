@@ -228,34 +228,100 @@
     </div>
     <div class="col-md-10">
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-md-8">
                 <div>
                     <h2>Khách hàng</h2>
                 </div>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <div class=" btn-toolbar mb-3">
                     <!-- Example single danger button -->
                     <div class="btn-group">
-                        <button type="button" class="btn btn-success">Khách hàng</button>
+                        <button type="button" class="btn btn-success" data-bind="modal: { viewName: 'themkhachhang', configs: { size: 'modal-lg' } }"><i
+                                class="fas fa-plus"></i>Khách hàng</button>
                     </div><!-- /btn-group -->
                     <div class="btn-group">
-                        <button type="button" class="btn btn-success">Import</button>
+                        <button type="button" class="btn btn-success" data-bind="modal: { viewName: 'importkhachhang', configs: { size: 'modal-sl' } }"><i
+                                class="fas fa-sign-in-alt"></i> Import</button>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success"><i class="fas fa-sign-out-alt"></i>Xuất file</button>
                     </div><!-- /btn-group -->
                     <div class="btn-group">
-                        <button type="button" class="btn btn-success">Xuất file</button>
-                    </div><!-- /btn-group -->
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Thêm mới
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><i class="fas fa-table"></i>
                         </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="menu-group" data-bind="foreach: [1]">
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Mã khách hàng
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Tên khách hàng
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Loại khách
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Điện thoại
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Nhóm khách hàng
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Giới tính
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Ngày sinh
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Email
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Facebook
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Công ty
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Mã số thuế
+                                </a>
+
+                            </div>
+                            <div class="menu-group">
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Địa chỉ
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Khu vực
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Phường xã
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Người tạo
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Ngày tạo
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Ghi chú
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Ngày giao dịch cuối
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Nợ hiện tại
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Tổng bán
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Tổng bán trừ trả hàng
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Trạng thái
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

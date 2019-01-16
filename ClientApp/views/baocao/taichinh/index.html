@@ -1,2 +1,74 @@
-<div data-bind="i18n: 'baocao/taichinh'"></div>
+<div class="row">
+    <div class="col-md-2">
+        <div class="accordion">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Báo cáo hàng hóa</h4>
+                    <button type="button" class="btn btn-success"><i class="fas fa-cloud-download-alt"></i>Xuất báo cáo</button>
+                    <h6>Kiểu hiển thị</h6>
 
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button">
+                                Kiểu hiển thị
+                            </button>
+                        </h5>
+                    </div>
+                    <div class="collapse show">
+                        <ul class="list-group">
+                            <li class="list-group-item"> <input type="radio">Biểu đồ</li>
+                            <li class="list-group-item"> <input type="radio">Báo cáo</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button">
+                                Thời gian
+                            </button>
+                        </h5>
+                    </div>
+                    <div class="collapse show">
+                        <ul class="list-group">
+                            <select class="form-control">
+                                <option>2019</option>
+                                <option>2018</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                            <li class="list-group-item"> <input type="radio">Theo tháng</li>
+                            <li class="list-group-item"> <input type="radio">Theo quý</li>
+                            <li class="list-group-item"> <input type="radio">Theo năm</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-10">
+        <h6>Các icon</h6>
+        <div>
+            <h6>Ngày lập</h6>
+            <h4>Báo cáo kết quả hoạt động kinh doanh</h4>
+            <h5>Từ ngày bao nhiêu đến ngày bao nhiêu</h5>
+            <h5>Chi nhánh: chi nhánh trung tâm</h5>
+            <table class="table">
+                <thead>
+                    <th>Q1 năm 2019</th>
+                    <th>Tổng</th>
+                </thead>
+                <tbody data-bind="foreach: [1,2,3,4,5,6,7,8,9,0]">
+                    <tr>
+                        <td>#</td>
+                        <td>20-09-2018</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

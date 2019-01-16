@@ -1,11 +1,10 @@
 <div>
-    <h2><b>Nhập hàng hóa từ file dữ liệu</b></h2>
     <div>
-        <h3>Xử lý dữ liệu(Tải về File mẫu:Excel File):</h3>
+        <h4>Xử lý dữ liệu(Tải về File mẫu:Excel File):</h4>
     </div>
     <hr>
     <div>
-        <h3>Có cập nhật giá trị tồn kho không?</h3>
+        <h4>Có cập nhật giá trị tồn kho không?</h4>
     </div>
     <br>
     <div>
@@ -16,7 +15,7 @@
     </div>
     <hr>
     <div>
-        <h3>Xử lý trùng mã hàng, khác tên hàng hóa?</h3>
+        <h4>Xử lý trùng mã hàng, khác tên hàng hóa?</h4>
     </div>
     <div>
         <input type="radio" name="checkbox" value="" />Báo lỗi và dừng import
@@ -25,7 +24,14 @@
         <input type="radio" name="checkbox" value="" />Thay thế tên hàng cũ thành tên hàng mới
     </div>
     <hr>
-    <table class="table table-borderless table-info">
-       Lưu ý
-    </table>
+    <div style="background: peachpuff;">
+        <h4>Lưu ý</h4>
+        <div>
+            <p>Hệ thống cho phép nhập tối đa là 5.000 mặt hàng mỗi lần từ file</p>
+        </div>
+        <div><p>Mã hàng chứa kí tự đặc biệt(@,#,$,*,/,-,...) và chữ có dấu sẽ gây khó khăn khi in và sử dụng mã vạch.<br>
+        Với hình ảnh hàng hóa, hệ thống sẽ lưu trữ và hiện thị theo link hình ảnh được nhập trên file execl(không lưu trữ ảnh).        </p></div>
+    </div>
+    <button type="button" class="btn btn-success"><i class="fas fa-copy"></i>Chọn file dữ liệu</button>
+    
 </div>

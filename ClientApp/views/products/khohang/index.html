@@ -40,11 +40,10 @@
                 </div>
                 <div class="collapse show">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Theo mã, tên hàng" aria-label="Username"
-                            aria-describedby="basic-addon1">
+                        <input type="text" class="form-control" placeholder="Theo mã, tên hàng">
                     </div>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Theo mô tả đặt hàng" aria-label="Username">
+                        <input type="text" class="form-control" placeholder="Theo mô tả đặt hàng">
                     </div>
                 </div>
             </div>
@@ -77,22 +76,53 @@
                 <div class=" btn-toolbar mb-3">
                     <!-- Example single danger button -->
                     <div class="btn-group">
-                        <button type="button" class="btn btn-success">Kiểm kho</button>
+                        <button type="button" class="btn btn-success"><i class="fas fa-plus"></i>Kiểm kho</button>
                     </div><!-- /btn-group -->
                     <div class="btn-group">
-                        <button type="button" class="btn btn-info">Xuất file</button>
+                        <button type="button" class="btn btn-success"><i class="fas fa-sign-out-alt"></i>Xuất file</button>
                     </div><!-- /btn-group -->
                     <div class="btn-group">
-                        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Thêm mới
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><i class="fas fa-table"></i>
                         </button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="menu-group" data-bind="foreach: [1]">
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Mã kiểm kho
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Thời gian
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Ngày cân bằng
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Tổng chênh lệch
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Tổng giá trị lệch
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">SL lệch tăng
+                                </a>
+                            </div>
+                            <div class="menu-group">
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Tổng giá trị tăng
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">SL lệch giảm
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Tổng giá trị giảm
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Ghi chú
+                                </a>
+                                <a class="dropdown-item">
+                                    <input type="checkbox" name="" value="">Trạng thái
+                                </a>
+
+                            </div>
                         </div>
                     </div>
                 </div>

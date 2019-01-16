@@ -5,3 +5,6 @@ import '@views/products/modal/addproducts';
 import '@views/products/modal/adddichvu';
 import '@views/products/modal/addcombo';
 import '@views/products/modal/modalimport';
+import '@views/products/modal/nhomhang';
+import '@views/products/modal/giabanhanghoa';
+import '@views/products/modal/vitrihanghoa';

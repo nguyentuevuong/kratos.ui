@@ -1,2 +1,98 @@
-<div data-bind="i18n: 'baocao/nhacungcap'"></div>
-
+<div class="row">
+        <div class="col-md-2">
+            <div class="accordion">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Báo cáo nhà cung cấp</h5>
+                        <button type="button" class="btn btn-success"><i class="fas fa-cloud-download-alt"></i>Xuất báo cáo</button>
+                        <h6>Kiểu hiển thị</h6>
+                        <div class="input-group mb-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="radio">Báo cáo
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="input-group-text">Upload</span>
+                                </div>
+                            </div>
+                            <input type="radio">Biểu đồ
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button">
+                                Mối quan tâm
+                            </button>
+                        </h5>
+                    </div>
+                    <div class="collapse show">
+                        <ul class="list-group">
+                            <li class="list-group-item"> <input type="radio">Nhập hàng</li>
+                            <li class="list-group-item"> <input type="radio">Công nợ</li>
+                            <li class="list-group-item"> <input type="radio">Hàng nhập theo NCC</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button">
+                                Thời gian
+                            </button>
+                        </h5>
+                    </div>
+                    <div class="collapse show">
+                        <div class="input-group mb-3">
+                            <input type="radio">
+                            <input type="text" class="form-control" placeholder="Theo mã, tên hàng">
+                        </div>
+                        <div class="input-group">
+                            <input type="radio">
+                            <input type="text" class="form-control" placeholder="Theo mô tả đặt hàng">
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button">
+                                Nhà cung cấp
+                            </button>
+                        </h5>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Theo mã, tên, điện thoại">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <h6>Các icon</h6>
+            <div>
+                <h6>Ngày lập</h6>
+                <h4>Báo cáo nhập hàng theo nhà cung cấp</h4>
+                <h5>Từ ngày bao nhiêu đến ngày bao nhiêu</h5>
+                <h5>Chi nhánh: chi nhánh trung tâm</h5>
+                <table class="table">
+                    <thead>
+                        <th>Mã nhà cung cấp</th>
+                        <th>Tên nhà cung cấp</th>
+                        <th>Giá trị nhập</th>
+                        <th>Giá trị trả</th>
+                        <th>Giá trị thuần</th>
+                    </thead>
+                    <tbody data-bind="foreach: [1,2,3,4,5,6,7,8,9,0]">
+                        <tr>
+                            <td>#</td>
+                            <td>20-09-2018</td>
+                            <td></td>
+                            <td></td>
+                            <td>20-09-2018</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

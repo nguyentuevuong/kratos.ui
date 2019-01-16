@@ -3,6 +3,7 @@ import { component } from '@app/common/ko';
     url: '/baocao/cuoingay',
     icon: "far fa-calendar-check",
     title: '#baocao_cuoingay',
+    styles: require('./style.scss'),
     template: require('./index.html'),
     resources: require('./resources.json')
 })

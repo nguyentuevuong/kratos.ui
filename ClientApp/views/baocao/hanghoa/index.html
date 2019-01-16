@@ -1,2 +1,143 @@
-<div data-bind="i18n: 'baocao/hanghoa'"></div>
+<div class="row">
+    <div class="col-md-2">
+        <div class="accordion">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Báo cáo hàng hóa</h4>
+                    <button type="button" class="btn btn-success"><i class="fas fa-cloud-download-alt"></i>Xuất báo cáo</button>
+                    <h6>Kiểu hiển thị</h6>
+                    <div class="input-group mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="radio">Báo cáo
+                            </div>
+                            <div class="col-md-6">
+                                <span class="input-group-text">Upload</span>
+                            </div>
+                        </div>
+                        <input type="radio">Biểu đồ
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button">
+                            Mối quan tâm
+                        </button>
+                    </h5>
+                </div>
+                <div class="collapse show">
+                    <ul class="list-group">
+                        <li class="list-group-item"> <input type="radio">Bán hàng</li>
+                        <li class="list-group-item"> <input type="radio">Lợi nhuận</li>
+                        <li class="list-group-item"> <input type="radio">Giá trị kho</li>
+                        <li class="list-group-item"> <input type="radio">Xuất nhập tồn</li>
+                        <li class="list-group-item"> <input type="radio">Xuất nhập tồn chi tiết</li>
+                        <li class="list-group-item"> <input type="radio">Xuất huye</li>
+                        <li class="list-group-item"> <input type="radio">Nhân viên theo hàng bán</li>
+                        <li class="list-group-item"> <input type="radio">Khách theo hàng bán</li>
+                        <li class="list-group-item"> <input type="radio">Nhà cung cấp theo hàng nhập</li>
+                        <li class="list-group-item"> <input type="radio">Hạn sử dụng</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button">
+                            Thời gian
+                        </button>
+                    </h5>
+                </div>
+                <div class="collapse show">
+                    <div class="input-group mb-3">
+                        <input type="radio">
+                        <input type="text" class="form-control" placeholder="Theo mã, tên hàng">
+                    </div>
+                    <div class="input-group">
+                        <input type="radio">
+                        <input type="text" class="form-control" placeholder="Theo mô tả đặt hàng">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button">
+                            Hàng hóa
+                        </button>
+                    </h5>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Thêm tên hoặc mã hàng">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button">
+                            Loại hàng
+                        </button>
+                    </h5>
+                </div>
+                <div class="collapse show">
+                    <ul class="list-group">
+                        <li class="list-group-item"> <input type="checkbox">Hàng hóa</li>
+                        <li class="list-group-item"> <input type="checkbox">Dịch vụ</li>
+                        <li class="list-group-item"> <input type="checkbox">Combo + đóng gói</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button">
+                            Nhóm hàng
+                        </button>
+                    </h5>
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm nhóm hàng">
+                </div>
 
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Tất cả</li>
+                    <li class="list-group-item">Điện công nghiệp</li>
+                    <li class="list-group-item">Gia dụng</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <h6>Các icon</h6>
+        <div>
+            <h6>Ngày lập</h6>
+            <h4>Báo cáo bán hàng theo hàng hóa</h4>
+            <h5>Từ ngày bao nhiêu đến ngày bao nhiêu</h5>
+            <h5>Chi nhánh: chi nhánh trung tâm</h5>
+            <table class="table">
+                <thead>
+                    <th>Mã hàng</th>
+                    <th>Tên hàng</th>
+                    <th>Số lượng bán</th>
+                    <th>Doanh thu</th>
+                    <th>Số lượng trả</th>
+                    <th>Giá trị trả</th>
+                    <th>Doanh thu thuần</th>
+                </thead>
+                <tbody data-bind="foreach: [1,2,3,4,5,6,7,8,9,0]">
+                    <tr>
+                        <td>#</td>
+                        <td>20-09-2018</td>
+                        <td></td>
+                        <td></td>
+                        <td>20-09-2018</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
