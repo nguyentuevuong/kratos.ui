@@ -64,7 +64,7 @@ declare interface Ii18n {
 declare interface IComponent {
     url: string;
     name: string;
-    icon?: string;
+    icon: string;
     title: string;
     params?: {
         [key: string]: string | null;
