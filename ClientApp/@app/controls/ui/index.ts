@@ -5,3 +5,4 @@ import '@app/controls/ui/i18n';
 import '@app/controls/ui/label';
 
 import '@app/controls/ui/modal';
+import '@app/controls/ui/fullsrc';
