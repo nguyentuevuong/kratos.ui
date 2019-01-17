@@ -1,0 +1,23 @@
+/* Chrome, Safari and Opera syntax */
+
+:-webkit-full-screen {
+    background-color: #fff;
+}
+
+/* Firefox syntax */
+
+:-moz-full-screen {
+    background-color: #fff;
+}
+
+/* IE/Edge syntax */
+
+:-ms-fullscreen {
+    background-color: #fff;
+}
+
+/* Standard syntax */
+
+:fullscreen {
+    background-color: #fff;
+}
