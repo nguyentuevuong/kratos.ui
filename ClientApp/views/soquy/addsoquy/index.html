@@ -517,10 +517,12 @@
                 <div class=" btn-toolbar mb-3">
                     <!-- Example single danger button -->
                     <div class="btn-group">
-                        <button type="button" class="btn btn-success" data-bind="modal: { viewName: 'modallapphieuthu', configs: { size: 'modal-lg' } }"><i class="fas fa-plus"></i>Lập phiếu thu</button>
+                        <button type="button" class="btn btn-success" data-bind="modal: { viewName: 'modallapphieuthu', configs: { size: 'modal-lg' } }"><i
+                                class="fas fa-plus"></i>Lập phiếu thu</button>
                     </div><!-- /btn-group -->
                     <div class="btn-group">
-                        <button type="button" class="btn btn-success" data-bind="modal: { viewName: 'modallapphieuchi', configs: { size: 'modal-lg' } }"><i class="fas fa-plus"></i>Lập phiếu chi</button>
+                        <button type="button" class="btn btn-success" data-bind="modal: { viewName: 'modallapphieuchi', configs: { size: 'modal-lg' } }"><i
+                                class="fas fa-plus"></i>Lập phiếu chi</button>
                     </div><!-- /btn-group -->
                     <div class="btn-group">
                         <button type="button" class="btn btn-success"><i class="fas fa-sign-out-alt"></i>Xuất file</button>
@@ -568,45 +570,49 @@
                 </div>
             </div>
             <!---->
-            <article class="cashTop">
-                <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-2">
-                        <label>Quỹ đầu kỳ</label>
-                        <div>0</div>
+            <div class="col-md-12">
+                <article class="cashTop">
+                    <div class="row">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-2">
+                            <label>Quỹ đầu kỳ</label>
+                            <div>0</div>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Tổng thu</label>
+                            <div>1,867594</div>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Tổng chi</label>
+                            <div>785.09</div>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Tồn quỹ</label>
+                            <div>0</div>
+                        </div>
                     </div>
-                    <div class="col-md-2">
-                        <label>Tổng thu</label>
-                        <div>1,867594</div>
-                    </div>
-                    <div class="col-md-2">
-                        <label>Tổng chi</label>
-                        <div>785.09</div>
-                    </div>
-                    <div class="col-md-2">
-                        <label>Tồn quỹ</label>
-                        <div>0</div>
-                    </div>
-                </div>
-            </article>
-            <table class="table table-bordered">
-                <thead>
-                    <th>Mã phiếu</th>
-                    <th>Thời gian</th>
-                    <th>Loại thu chi</th>
-                    <th>Người nộp/nhận</th>
-                    <th>Giá trị</th>
-                </thead>
-                <tbody data-bind="foreach: [1,2,3,4]">
-                    <tr>
-                        <td>KH01</td>
-                        <td>Nguyễn Văn A</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+                </article>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-bordered">
+                    <thead>
+                        <th>Mã phiếu</th>
+                        <th>Thời gian</th>
+                        <th>Loại thu chi</th>
+                        <th>Người nộp/nhận</th>
+                        <th>Giá trị</th>
+                    </thead>
+                    <tbody data-bind="foreach: [1,2,3,4]">
+                        <tr>
+                            <td>KH01</td>
+                            <td>Nguyễn Văn A</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <div>
                 <nav aria-label="Page navigation example">
                     <ul class="pagination">

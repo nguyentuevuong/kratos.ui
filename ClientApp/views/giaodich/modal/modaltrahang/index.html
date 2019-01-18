@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="col-md-4">
+        <div class="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button">
+                            Tìm kiếm
+                        </button>
+                    </h5>
+                </div>
+                <div class="collapse show">
+                    <div class="input-group mb-1">
+                        <input type="text" class="form-control" placeholder="Theo mã hóa đơn">
+                    </div>
+                    <div class="input-group mb-1">
+                        <input type="text" class="form-control" placeholder="Theo khách hàng hoặc ĐT">
+                    </div>
+                    <div class="input-group mb-1">
+                        <input type="text" class="form-control" placeholder="Theo tên hoặc mã hàng">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button">
+                            Thời gian
+                        </button>
+                    </h5>
+                </div>
+                <div class="collapse show">
+                    <div class="input-group mb-1">
+                        <input type="date" class="form-control" placeholder="Từ ngày">
+                    </div>
+                    <div class="input-group">
+                        <input type="date" class="form-control" placeholder="Đến ngày">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                    <th>Mã trả hàng</th>
+                    <th>Người bán</th>
+                    <th>Thời gian</th>
+                    <th>Khách hàng</th>
+                    <th>Cần trả hàng</th>
+                    <th>Đã trả khách</th>
+                    <th>Trạng thái</th>
+                </thead>
+                <tbody data-bind="foreach: [1,2,3,4]">
+                    <tr>
+                        <td>#</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Nguyễn Văn A</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-success">Trả nhanh</button>
+        </div>
+    </div>
+</div>
