@@ -68,7 +68,7 @@ document.addEventListener("click", function (e) {
         let target = evt.target as HTMLElement;
 
         if (ko.utils.dom.hasClass(target, 'nav-link') && !ko.utils.dom.hasClass(target, 'disabled')) {
-            let parent = target.closest('.nav.nav-tabs'),
+            let parent = target.closest('.nav.nav-tabs') || target.closest('.nav.nav-pills'),
                 href = ko.utils.dom.getAttr(target, 'href');
 
             if (parent) {

@@ -1,0 +1,84 @@
+.nav {
+    &.nav-tabs {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border-bottom-color: transparent;
+        .nav-item {
+            &:not(:first-child) {
+                .nav-link {
+                    margin-left: 3px;
+                }
+            }
+            .nav-link {
+                margin-top: 0;
+                border-color: $nav-tabs-border-color;
+                //border-color: darken($secondary, 20%);
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+                &.active {
+                    color: $white;
+                    border-color: $success;
+                    background-color: $success;
+                    padding: calc(0.5rem - 1px) 1rem 0.5rem 1rem;
+                    &:focus,
+                    &:hover {
+                        padding: calc(0.5rem - 1px) 1rem 0.5rem 1rem;
+                    }
+                }
+                &.disabled,
+                &:disabled {
+                    border-color: darken($secondary, 20%);
+                    border-bottom-color: transparent;
+                    &:hover {
+                        border-color: darken($secondary, 20%);
+                    }
+                }
+                &:not(.disabled),
+                &:not(:disabled) {
+                    &:focus,
+                    &:hover {
+                        &:not(.active) {
+                            padding: 0.5rem 1rem;
+                        }
+                    }
+                }
+                &:focus {
+                    outline: none;
+                    border-color: #00B050;
+                    border-bottom-color: transparent;
+                    box-shadow: 0px -2px 0px 2px lighten($success, 5%); // rgba(40, 182, 44, 0.5019607843137255);
+                }
+            }
+        }
+        &+.tab-content {
+            padding: 15px;
+            border: 1px solid darken($secondary, 20%);
+            margin-top: -1px;
+            border-radius: 5px;
+        }
+    }
+    &.nav-pills {
+        &:not(.flex-column) {
+            border-bottom: 1px solid darken($secondary, 20%);
+            .nav-item {
+                .nav-link {
+                    color: $black;
+                    border-color: darken($secondary, 20%);
+                    border-bottom-color: transparent;
+                    &.active {
+                        color: $black;
+                        background-color: $secondary;
+                    }
+                    &.disabled {
+                        color: $nav-link-disabled-color;
+                    }
+                    &:focus {
+                        outline: none;
+                        border-color: $input-focus-border-color;
+                        box-shadow: $input-focus-box-shadow;
+                    }
+                }
+            }
+        }
+    }
+}

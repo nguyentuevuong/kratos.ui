@@ -2,7 +2,7 @@ import { ko } from '@app/providers';
 import { component } from '@app/common/ko';
 
 @component({
-    url: '/',
+    //url: '/',
     icon: 'fa fa-home',
     title: '#home',
     styles: require('./style.scss'),
