@@ -17,3 +17,21 @@
         margin-right: 7px;
     }
 }
+.dropdown-menu {
+    &.show {
+        width: auto;
+        white-space: nowrap;
+        padding: 5px;
+        .menu-group {
+            vertical-align: top;
+            display: inline-block;
+            &:not(:first-child) {
+                padding-left: 1rem;
+            }
+        }
+        .dropdown-item {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+    }
+}
