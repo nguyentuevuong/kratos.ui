@@ -2,6 +2,7 @@ import { ko } from '@app/providers';
 import { handler } from '@app/common/ko';
 import { InputMaskCore } from '@app/common/utils/mask/core';
 import { StringMask } from '@app/common/utils/smask';
+import { HtmlUtils } from '@app/common/utils/html';
 
 const dom = ko.utils.dom,
     ddt = ko.utils.domData,
@@ -161,7 +162,8 @@ export class InputBindingHandler implements KnockoutBindingHandler {
         }
 
         // call label update
-        ko.bindingHandlers.label.update!(elements.lbl, valueAccessor, allBindingsAccessor, viewModel, bindingContext);
+
+        HtmlUtils.createLabel(control, elements.lbl);
 
         // update column of group
         ko.bindingHandlers.$column.update!(elements.lblc, valueAccessor, ko.utils.extendAllBindingsAccessor(allBindingsAccessor, { type: 'label' }), viewModel, bindingContext);
