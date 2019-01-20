@@ -50,14 +50,22 @@ export class HtmlUtils {
         return element;
     }
 
-    public static createElement(obsr: ValidationObservable<any>, element?: HTMLElement): { container: HTMLElement, input: HTMLInputElement } {
+    public static createInputGroup(obsr: ValidationObservable<any>, element?: HTMLElement): { container: HTMLElement, input: HTMLInputElement } {
         let id = ko.toJS(obsr.$id) || ko.toJS(obsr.$attr).id,
             lbc = dom.create('div'),
             ipc = dom.create('div'),
             label = dom.create('label'),
-            input = dom.create('input', { type: 'text', class: 'form-control' }) as HTMLInputElement;
+            inpg = dom.create('div', { 'class': 'input-group input-group-transparent' }), //input-group-transparent
+            input = dom.create('input', { type: 'text', class: 'form-control' }) as HTMLInputElement,
+            iga = dom.create('div', { 'class': 'input-group-append' }),
+            icb = dom.create('i'),
+            ica = dom.create('i'),
+            igp = dom.create('div', { 'class': 'input-group-prepend' });
 
         element = element || dom.create('div', { 'class': 'row' });
+
+        igp.appendChild(icb);
+        iga.appendChild(ica);
 
         ko.computed({
             read: () => {
@@ -72,7 +80,40 @@ export class HtmlUtils {
                 }
             },
             disposeWhen: () => false
-        })
+        });
+
+        ko.computed({
+            read: () => {
+                let icons: { before?: string; after?: string; } = ko.toJS(obsr.$icons);
+
+                if (icons) {
+                    if (icons.after) {
+                        if (!inpg.contains(iga)) {
+                            inpg.prepend(iga);
+                        }
+
+                        ica.setAttribute('class', `input-group-text ${icons.after}`);
+                    }
+
+                    if (icons.before) {
+                        if (!inpg.contains(igp)) {
+                            inpg.prepend(igp);
+                        }
+
+                        icb.setAttribute('class', `input-group-text ${icons.before}`);
+                    }
+                } else {
+                    if (inpg.contains(igp)) {
+                        inpg.removeChild(igp);
+                    }
+
+                    if (inpg.contains(iga)) {
+                        inpg.removeChild(iga);
+                    }
+                }
+            },
+            disposeWhen: () => false
+        });
 
         if (element) {
             dom.addClass(element, 'row form-group');
@@ -81,7 +122,9 @@ export class HtmlUtils {
             element.appendChild(ipc);
 
             lbc.appendChild(label);
-            ipc.appendChild(input);
+
+            ipc.appendChild(inpg);
+            inpg.appendChild(input);
 
             dom.setAttr(input, 'id', id);
 
