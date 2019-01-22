@@ -13,7 +13,7 @@ const dom = ko.utils.dom,
 })
 export class InputBindingHandler implements KnockoutBindingHandler {
     init = (element: HTMLElement, valueAccessor: () => ValidationObservable<any>, allBindingsAccessor: KnockoutAllBindingsAccessor, viewModel: any, bindingContext: KnockoutBindingContext) => {
-        HtmlUtils.createInputGroup(valueAccessor(), element);
+        HtmlUtils.createInput(valueAccessor(), element);
 
         return { controlsDescendantBindings: true };
     }

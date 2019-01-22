@@ -137,6 +137,11 @@ export class HtmlUtils {
         return { container: element, group: inpg };
     }
 
+    /**
+     * 
+     * @param obsr KnockoutObservable<any>
+     * @param element binding container for form group
+     */
     public static createInput(obsr: ValidationObservable<any>, element?: HTMLElement): { container: HTMLElement, input: HTMLInputElement } {
         let id = ko.toJS(obsr.$id) || ko.toJS(obsr.$attr).id,
             input = dom.create('input', { type: 'text', class: 'form-control' }) as HTMLInputElement,
@@ -148,7 +153,28 @@ export class HtmlUtils {
         return { container: elements.container, input: input };
     }
 
+    /**
+     * 
+     * @param obsr KnockoutObservable<any>
+     * @param element binding container for form group
+     */
     public static createSelect(obsr: ValidationObservable<any>, element?: HTMLElement): { container: HTMLElement, select: HTMLSelectElement } {
+        let id = ko.toJS(obsr.$id) || ko.toJS(obsr.$attr).id,
+            select = dom.create('select', { class: 'form-control' }) as HTMLSelectElement,
+            elements = HtmlUtils.createFormGroup(obsr, element);
+
+        dom.setAttr(select, 'id', id);
+        elements.group.appendChild(select);
+
+        return { container: elements.container, select: select };
+    }
+
+    /**
+     * 
+     * @param obsr KnockoutObservable<any>
+     * @param element binding container for form group
+     */
+    public static createCheckBoxs(obsr: ValidationObservable<any>, element?: HTMLElement): { container: HTMLElement, select: HTMLSelectElement } {
         let id = ko.toJS(obsr.$id) || ko.toJS(obsr.$attr).id,
             select = dom.create('select', { class: 'form-control' }) as HTMLSelectElement,
             elements = HtmlUtils.createFormGroup(obsr, element);
