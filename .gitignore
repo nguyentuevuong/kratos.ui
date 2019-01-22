@@ -8,4 +8,5 @@
 **/wwwroot/dist/**/*.eot
 **/wwwroot/dist/**/*.svg
 **/wwwroot/dist/**/*.ttf
+**/wwwroot/dist/**/*.wof*
 **/.DS_Store
