@@ -1,184 +1,161 @@
-<div>
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-                aria-selected="true">Thông tin</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                aria-selected="false">Mô tả chi tiết</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-                aria-selected="false">Thành phần</a>
-        </li>
-    </ul>
-    <div class="tab-content">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <div class="row">
-                <div class="col-md-6">
-                    <form>
-                        <div class="form-group row">
-                            <label for="exampleInputEmail1" class="col-sm-3 col-form-label">Mã hàng hóa</label>
-                            <div class="col-sm-9">
-                                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Mã hàng tự động">
-                            </div>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item">
+        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+            aria-selected="true">Thông tin</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+            aria-selected="false">Mô tả chi tiết</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+            aria-selected="false">Thành phần</a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group row">
+                        <label for="exampleInputEmail1" class="col-sm-3 col-form-label">Mã hàng hóa</label>
+                        <div class="col-sm-9">
+                            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Mã hàng tự động">
                         </div>
-                        <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-3 col-form-label">Tên hàng</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-3 col-form-label">Nhóm hàng</label>
-                            <div class="col-sm-9">
-                                <div class="row">
-                                    <div class="col-md-10">
-                                        <select id="inputState" class="form-control">
-                                            <option selected>--Lựa chọn--</option>
-                                            <option>...</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <a class="fas fa-plus-square" data-bind="modal: { viewName: 'nhomhang', configs: { size: 'modal-sn' } }"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-3 col-form-label">Giá bán</label>
-                            <div class="col-sm-9">
-                                <div class="row">
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-md-2">
-                                        <a class="fas fa-plus-square" data-bind="modal: { viewName: 'giabanhanghoa', configs: { size: 'modal-sn' } }"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-3 col-form-label">Vị trí</label>
-                            <div class="col-sm-9">
-                                <div class="row">
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control">
-                                    </div>
-                                    <div class="col-md-2">
-                                        <a class="fas fa-plus-square" data-bind="modal: { viewName: 'vitrihanghoa', configs: { size: 'modal-sn' } }"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-6">
-                    <div>
-                        <img src="..." class="img-fluid" alt="Responsive image">
                     </div>
-                    <div><button type="button">Chọn ảnh</button></div>
-                    <div>
-                        <input type="checkbox"> Được bán trực tiếp
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-3 col-form-label">Tên hàng</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                        </div>
                     </div>
-                </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-3 col-form-label">Nhóm hàng</label>
+                        <div class="col-sm-9">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <select id="inputState" class="form-control">
+                                        <option selected>--Lựa chọn--</option>
+                                        <option>...</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <a class="fas fa-plus-square" data-bind="modal: { viewName: 'nhomhang', configs: { size: 'modal-sn' } }"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-3 col-form-label">Giá bán</label>
+                        <div class="col-sm-9">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-md-2">
+                                    <a class="fas fa-plus-square" data-bind="modal: { viewName: 'giabanhanghoa', configs: { size: 'modal-sn' } }"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="inputPassword3" class="col-sm-3 col-form-label">Vị trí</label>
+                        <div class="col-sm-9">
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-md-2">
+                                    <a class="fas fa-plus-square" data-bind="modal: { viewName: 'vitrihanghoa', configs: { size: 'modal-sn' } }"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div class="card">
-                <div class="card-header">
-                    Theo dõi thuộc tính
+            <div class="col-md-6">
+                <div>
+                    <img src="..." class="img-fluid" alt="Responsive image">
                 </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Thuộc tính</label>
-                                <select class="form-control">
-                                    <option>--Chọn thuộc tính--</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="form-group row">
-                                <label for="exampleInputEmail1">Giá trị</label>
-                                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Nhập giá trị và enter">
-                            </div>
-                        </div>
-                    </div>
-                    <button class="btn btn-secondary"><i class="fas fa-plus"></i>Thêm thuộc tính</button>
-                </div>
-            </div><br>
-            <div class="card">
-                <div class="card-header">
-                    Đơn vị tính
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Đơn vị cơ bản</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
-                    </div>
-                    <button class="btn btn-secondary"><i class="fas fa-plus"></i>Thêm thuộc tính</button>
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-7"></div>
-                <div class="col-md-5">
-                    <button class="btn btn-secondary"><i class="fas fa-plus"></i>Lưu</button>
-                    <button class="btn btn-secondary"><i class="fas fa-plus"></i>Lưu và thêm mới</button>
-                    <button class="btn btn-secondary"><i class="fas fa-plus"></i>Bỏ qua</button>
+                <div><button type="button">Chọn ảnh</button></div>
+                <div>
+                    <input type="checkbox"> Được bán trực tiếp
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-            <div class="card">
-                <div class="card-header">
-                    Mô tả
-                </div>
-                <div class="card-body">
-
-                </div>
+        <div class="card">
+            <div class="card-header">
+                Theo dõi thuộc tính
             </div>
-            <br>
-            <div class="card">
-                <div class="card-header">
-                    Mẫu ghi chú, hóa đơn
-                </div>
-                <div class="card-body">
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-md-7"></div>
-                <div class="col-md-5">
-                    <button class="btn btn-secondary"><i class="fas fa-plus"></i>Lưu</button>
-                    <button class="btn btn-secondary"><i class="fas fa-plus"></i>Lưu và thêm mới</button>
-                    <button class="btn btn-secondary"><i class="fas fa-plus"></i>Bỏ qua</button>
-                </div>
-            </div>
-        </div>
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><br>
-            <form>
-                <div class="form-group row">
-                    <label for="exampleInputEmail1" class="col-sm-2 col-form-label">Hàng hóa thành phần:</label>
-                    <div class="col-sm-9">
-                        <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Thêm hàng hóa thành phần">
-                        <small id="emailHelp" class="form-text text-muted">Hàng hóa này chưa có định lượng nguyên liệu</small>
-                    </div>
-                </div>
+            <div class="card-body">
                 <div class="row">
-                    <div class="col-md-7"></div>
-                    <div class="col-md-5">
-                        <button class="btn btn-success"><i class="fas fa-plus"></i>Lưu</button>
-                        <button class="btn btn-success"><i class="fas fa-plus"></i>Lưu và thêm mới</button>
-                        <button class="btn btn-secondary"><i class="fas fa-plus"></i>Bỏ qua</button>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Thuộc tính</label>
+                            <select class="form-control">
+                                <option>--Chọn thuộc tính--</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group row">
+                            <label for="exampleInputEmail1">Giá trị</label>
+                            <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Nhập giá trị và enter">
+                        </div>
                     </div>
                 </div>
-            </form>
+                <button class="btn btn-secondary"><i class="fas fa-plus"></i>Thêm thuộc tính</button>
+            </div>
+        </div><br>
+        <div class="card">
+            <div class="card-header">
+                Đơn vị tính
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Đơn vị cơ bản</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-secondary"><i class="fas fa-plus"></i>Thêm thuộc tính</button>
+            </div>
         </div>
     </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <div class="card">
+            <div class="card-header">
+                Mô tả
+            </div>
+            <div class="card-body">
+
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-header">
+                Mẫu ghi chú, hóa đơn
+            </div>
+            <div class="card-body">
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+        <div class="form-group row">
+            <label for="exampleInputEmail1" class="col-sm-2 col-form-label">Hàng hóa thành phần:</label>
+            <div class="col-sm-9">
+                <input type="email" class="form-control" aria-describedby="emailHelp" placeholder="Thêm hàng hóa thành phần">
+                <small id="emailHelp" class="form-text text-muted">Hàng hóa này chưa có định lượng nguyên liệu</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr />
+<div class="text-right">
+    <button class="btn btn-success"><i class="fas fa-plus"></i>Lưu</button>
+    <button class="btn btn-success"><i class="fas fa-plus"></i>Lưu và thêm mới</button>
+    <button class="btn btn-secondary"><i class="fas fa-plus"></i>Bỏ qua</button>
 </div>
