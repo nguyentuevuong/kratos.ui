@@ -2,8 +2,8 @@ import { _, ko } from '@app/providers';
 import { i18text } from '@app/common/lang';
 import { handler, Modals } from '@app/common/ko';
 
-
 const dom = ko.utils.dom,
+    trgEvent = ko.utils.triggerEvent,
     regEvent = ko.utils.registerEventHandler;
 
 @handler({
@@ -195,3 +195,18 @@ export interface IModalConfigs {
     closeBtn: boolean | KnockoutObservable<boolean>,
     modaless: boolean | KnockoutObservable<boolean>
 }
+
+/**
+ * Register event close dialog for all button in dialog
+ */
+regEvent(document, 'click', (evt: MouseEvent) => {
+    let target: HTMLElement = evt.target as HTMLElement;
+
+    if (target && target.getAttribute('data-close') == 'modal') {
+        let dialog = dom.parents(target, '.modal');
+
+        if (dialog) {
+            trgEvent(dialog.querySelector('.close'), 'click');
+        }
+    }
+});
