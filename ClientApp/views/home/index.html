@@ -1,7 +1,10 @@
 <div class="home">
     <div data-bind="lang: 'vi'"></div>
 
-    <div data-bind="mask: $vm.input"></div>
+    <div data-bind="time: $vm.input"></div>
+    <div data-bind="date: $vm.input"></div>
+    <div data-bind="number: $vm.input"></div>
+    <div data-bind="string: $vm.input"></div>
 
     <button class="btn btn-primary" data-bind="modal: { viewName: 'combodichvu', configs: { size: 'modal-lg' } }">Show
         dialog</button>

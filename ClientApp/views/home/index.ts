@@ -10,7 +10,17 @@ import { component } from '@app/common/ko';
     resources: require('./resources.json')
 })
 export class HomeViewModel implements IView, IDispose {
-    input = ko.observable('').extend({ required: true, $name: 'label', $constraint: '#constraint', $columns: ['col-md-2', 'col-md-4'], /*$icons: { before: ' fa fa-clock-o', after: 'fas fa-sort-down' }*/ });
+    input = ko.observable('')
+        .extend({
+            required: true,
+            $name: 'home',
+            $constraint: '#constraint',
+            $columns: ['col-md-2', 'col-md-4'],
+            $icons: {
+                //before: ' fa fa-clock-o'
+                //,after: 'fas fa-sort-down'
+            }
+        });
 
     constructor(params: any, private element: HTMLElement) {
         console.log(params);
@@ -18,6 +28,8 @@ export class HomeViewModel implements IView, IDispose {
         this.input.subscribe(v => {
             console.log(v);
         })
+
+        ko.utils.extend(window, { inp: this.input });
     }
 
     dispose(): void {
