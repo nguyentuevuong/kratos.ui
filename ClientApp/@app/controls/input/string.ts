@@ -11,7 +11,7 @@ const dom = ko.utils.dom,
     virtual: false,
     bindingName: 'string'
 })
-export class InputBindingHandler implements KnockoutBindingHandler {
+export class StringBindingHandler implements KnockoutBindingHandler {
     init = (element: HTMLElement, valueAccessor: () => ValidationObservable<any>, allBindingsAccessor: KnockoutAllBindingsAccessor, viewModel: any, bindingContext: KnockoutBindingContext) => {
         HtmlUtils.createInput(valueAccessor(), element);
 
