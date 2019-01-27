@@ -1,4 +1,5 @@
 import { ko } from '@app/providers';
+
 ko.utils.extend(ko.extenders, {
     dataSources: (target: ValidationObservable<number>, dataSources: Array<any>) => {
         // extend name prop of observable

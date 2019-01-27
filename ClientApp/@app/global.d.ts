@@ -34,6 +34,7 @@ declare interface ComponentConstructor {
         element: HTMLElement,
         templateNodes?: Array<HTMLElement>
     ): any;
+    name?: string;
 }
 
 declare interface ElementRef {
@@ -283,6 +284,7 @@ declare interface KnockoutExtenders {
     $disbale: (target: ValidationObservable<any>, disbale: boolean) => ValidationObservable<any>;
     $required: (target: ValidationObservable<any>, required: any | boolean) => ValidationObservable<any>;
     $validate: (target: ValidationObservable<any>, validate: (value: any) => string) => ValidationObservable<any>;
+    dataSources: (target: ValidationObservable<any>, dataSources: Array<any>) => ValidationObservable<any>;
 }
 
 declare interface KnockoutObservable<T> extends KnockoutSubscribable<T>, KnockoutObservableFunctions<T> {

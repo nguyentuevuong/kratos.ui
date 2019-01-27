@@ -1,5 +1,6 @@
 import { ko } from '@app/providers';
 import { i18text } from '@app/common/lang';
+import { random } from '@app/common/utils/id';
 
 const dom = ko.utils.dom;
 
@@ -174,14 +175,53 @@ export class HtmlUtils {
      * @param obsr KnockoutObservable<any>
      * @param element binding container for form group
      */
-    public static createCheckBoxs(obsr: ValidationObservable<any>, element?: HTMLElement): { container: HTMLElement, select: HTMLSelectElement } {
-        let id = ko.toJS(obsr.$id) || ko.toJS(obsr.$attr).id,
-            select = dom.create('select', { class: 'form-control' }) as HTMLSelectElement,
+    public static createCheckBoxs(obsr: ValidationObservable<any>, element?: HTMLElement): { container: HTMLElement, selects: HTMLInputElement[] } {
+        let name = random.id,
+            selects: HTMLInputElement[] = [],
             elements = HtmlUtils.createFormGroup(obsr, element);
 
-        dom.setAttr(select, 'id', id);
-        elements.group.appendChild(select);
+        dom.setAttr(elements.container, 'class', 'row');
+        dom.setAttr(elements.group, 'class', 'form-group');
 
-        return { container: elements.container, select: select };
+        ko.computed({
+            read: () => {
+                let items = ko.toJS(obsr.dataSources) || [];
+                selects = [];
+
+                ko.utils.arrayForEach(items, (item: any, index: number) => {
+                    let id = random.id,
+                        cc = dom.create('div', { 'class': 'custom-control custom-checkbox inline-checkbox' }),
+                        cb = dom.create('input', { 'class': 'custom-control-input', 'type': 'checkbox', 'id': id , 'name': name}),
+                        lb = dom.create('label', { 'class': 'custom-control-label', 'for': id, 'text': item });
+
+                    cc.appendChild(cb);
+                    cc.appendChild(lb);
+
+                    elements.group.appendChild(cc);
+                });
+            },
+            disposeWhen: () => false
+        })
+
+        return { container: elements.container, selects: selects };
+    }
+
+    public static createRadioBoxs(obsr: ValidationObservable<any>, element?: HTMLElement): { container: HTMLElement, selects: HTMLInputElement[] } {
+        let selects: HTMLInputElement[] = [],
+            elements = HtmlUtils.createFormGroup(obsr, element);
+
+        ko.computed({
+            read: () => {
+                let items = ko.toJS(obsr.dataSources) || [];
+                selects = [];
+
+                ko.utils.arrayForEach(items, (item: any, index: number) => {
+
+                });
+            },
+            disposeWhen: () => false
+        })
+
+        return { container: elements.container, selects: selects };
     }
 }

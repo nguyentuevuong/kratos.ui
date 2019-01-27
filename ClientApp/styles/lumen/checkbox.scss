@@ -66,10 +66,22 @@
 }
 
 .custom-checkbox {
+    padding-left: 0;
+    &.inline-checkbox {
+        margin: 0;
+        display: inline-block;
+        padding: 7px 0;
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
     .custom-control-input {
         &~.custom-control-label {
+            &:before {
+                top: 0;
+            }
             &:after {
-                top: 4px;
+                top: 2px;
                 left: -18px;
                 width: 6px;
                 height: 12px;

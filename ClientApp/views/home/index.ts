@@ -1,5 +1,5 @@
 import { ko } from '@app/providers';
-import { component } from '@app/common/ko';
+import { prop, component } from '@app/common/ko';
 
 @component({
     url: '/',
@@ -10,7 +10,7 @@ import { component } from '@app/common/ko';
     resources: require('./resources.json')
 })
 export class HomeViewModel implements IView, IDispose {
-    input = ko.observable('')
+    public input = ko.observableString('')
         .extend({
             required: true,
             $name: 'home',
@@ -20,6 +20,15 @@ export class HomeViewModel implements IView, IDispose {
                 //before: ' fa fa-clock-o'
                 //,after: 'fas fa-sort-down'
             }
+        });
+
+    @prop()
+    public checkbox = ko.observableSelection('')
+        .extend({
+            required: false,
+            $name: 'checkbox',
+            $columns: ['col-md-2', 'col-md-4'],
+            dataSources: ['Options 1', 'Options 2', 'Options 3']
         });
 
     constructor(params: any, private element: HTMLElement) {
